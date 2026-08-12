@@ -1,0 +1,105 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "retaildf7878832"
+		},
+		"LS_AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AzureSqlDatabase1'"
+		},
+		"dynamicLS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'dynamicLS'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"LS_AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "pocretaildb.database.windows.net"
+		},
+		"LS_AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "retaildatabase"
+		},
+		"LS_AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin123"
+		},
+		"dynamicLS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "pocretaildb.database.windows.net"
+		},
+		"dynamicLS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "@{linkedService().db_name}"
+		},
+		"dynamicLS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin123"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "retaildf7878832_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureSqlDatabase1_password": {
+						"value": "[parameters('LS_AzureSqlDatabase1_password')]"
+					},
+					"dynamicLS_password": {
+						"value": "[parameters('dynamicLS_password')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"LS_AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('LS_AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"LS_AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('LS_AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"LS_AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"dynamicLS_properties_typeProperties_server": {
+						"value": "[parameters('dynamicLS_properties_typeProperties_server')]"
+					},
+					"dynamicLS_properties_typeProperties_database": {
+						"value": "[parameters('dynamicLS_properties_typeProperties_database')]"
+					},
+					"dynamicLS_properties_typeProperties_userName": {
+						"value": "[parameters('dynamicLS_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
