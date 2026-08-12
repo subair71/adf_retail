@@ -1,0 +1,15 @@
+{
+	"name": "retaildf7878832",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "56b125ef-23ff-4979-a8cc-027a04fa23c6",
+		"tenantId": "0a7e8560-c5d5-4a9a-aa3f-64d422f855af"
+	}
+}
