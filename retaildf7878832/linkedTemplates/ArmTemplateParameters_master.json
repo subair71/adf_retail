@@ -5,13 +5,19 @@
 		"factoryName": {
 			"value": "retaildf7878832"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
 		"LS_AzureSqlDatabase1_password": {
 			"value": ""
 		},
 		"dynamicLS_password": {
-			"value": ""
-		},
-		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
 		"LS_AzureSqlDatabase1_properties_typeProperties_server": {
