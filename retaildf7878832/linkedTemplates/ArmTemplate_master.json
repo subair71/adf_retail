@@ -19,6 +19,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
 		},
+		"AzureBlobStorage4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+		},
+		"LSABS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSABS'"
+		},
 		"LS_AzureSqlDatabase1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AzureSqlDatabase1'"
@@ -86,6 +94,12 @@
 					},
 					"AzureBlobStorage3_connectionString": {
 						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"AzureBlobStorage4_connectionString": {
+						"value": "[parameters('AzureBlobStorage4_connectionString')]"
+					},
+					"LSABS_connectionString": {
+						"value": "[parameters('LSABS_connectionString')]"
 					},
 					"LS_AzureSqlDatabase1_password": {
 						"value": "[parameters('LS_AzureSqlDatabase1_password')]"

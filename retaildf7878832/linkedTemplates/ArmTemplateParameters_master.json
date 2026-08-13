@@ -14,6 +14,12 @@
 		"AzureBlobStorage3_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"LSABS_connectionString": {
+			"value": ""
+		},
 		"LS_AzureSqlDatabase1_password": {
 			"value": ""
 		},
